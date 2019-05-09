@@ -1,0 +1,16 @@
+
+% Función DTMF...
+
+% Nota: El archivo que contiene una función debe llevar el mismo nombre
+% que la funcion, de lo contrario MatLab no reconoserá los llamados a la
+% función desde archivos externos...
+
+function [y, t] = DTMF(f1, f2, Fs, TD)
+
+    Ns = Fs * TD;            % Numero de muestras...
+    Ts = 1/Fs;               % Tiempo de cada muestra en (s)...
+    t = 0:Ts:TD;             % Vector de muestras...
+    
+    y = sin(2*pi*f1*t) + sin(2*pi*f2*t);
+    
+end
